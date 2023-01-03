@@ -5,7 +5,7 @@ import Typed from "react-typed";
 import man from "images/dev.svg";
 
 // Animation
-import {  Link } from "react-scroll";
+import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 
 // CSS
@@ -40,17 +40,23 @@ const Home = () => {
         <h2>Hi Devs!</h2>
         <h1>I’m Kazuhide.</h1>
         <p>
-          I am a
           <span
             style={{ fontSize: "1.5rem", fontWeight: "600", marginLeft: "2%" }}
           >
             <Typed
-              strings={["Full Stack Developer", "Level One Seller at Fiverr"]}
+              strings={["Front End Developer", "Full Stack Developer"]}
               typeSpeed={50}
               backSpeed={50}
               loop
             />
           </span>
+        </p>
+        <p style={{ fontSize: "18px" }}>
+          Kazu is an experienced full-stack developer with a decade of
+          experience in web and software engineering and a focus on JavaScript
+          and its major libraries and frameworks. His ultimate aim is to deliver
+          perfect final results for project requirements while never missing
+          deadlines and always maintaining high code quality.
         </p>
         <Link
           // className="home-btn"
@@ -62,7 +68,7 @@ const Home = () => {
           offset={-100}
           duration={500}
         >
-        <Button text={"See my work"} type="submit" />
+          <Button text={"See my work"} type="submit" />
         </Link>
       </motion.div>
 
