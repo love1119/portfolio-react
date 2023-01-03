@@ -13,7 +13,7 @@ import Footer from "components/Footer/Footer";
 // Sanity
 import sanityClient from "client";
 // Data
-import { SERVICES, EXPERIENCES, TESTIMONIALS } from "./data";
+import { SERVICES, EXPERIENCES, TESTIMONIALS, CONTACTS } from "./data";
 
 // Animation
 import Aos from "aos";
@@ -56,19 +56,12 @@ function App() {
         `
       )
       .then((data) => {
-        let tempTestimonials = [];
         let tempProjects = [];
-        let tempServices = [];
 
         data.map((doc) => {
-          if (doc.country) {
-            // It is a testimonial
-            tempTestimonials.push(doc);
-          } else if (doc.liveUrl) {
+          if (doc.liveUrl) {
             // It is a project
             tempProjects.push(doc);
-          } else {
-            tempServices.push(doc);
           }
 
           return null;
@@ -92,7 +85,7 @@ function App() {
       <Portfolio projects={projects} />
       <Testimonials testimonials={TESTIMONIALS} />
       <Contact />
-      <Footer />
+      <Footer contacts={CONTACTS} />
     </div>
   );
 }
