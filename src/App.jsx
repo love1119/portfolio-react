@@ -13,7 +13,7 @@ import Footer from "components/Footer/Footer";
 // Sanity
 import sanityClient from "client";
 // Data
-import { SERVICES, EXPERIENCES } from "./data";
+import { SERVICES, EXPERIENCES, TESTIMONIALS } from "./data";
 
 // Animation
 import Aos from "aos";
@@ -22,9 +22,6 @@ import "aos/dist/aos.css";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [projects, setProjects] = useState([]);
-  const [services] = useState(SERVICES);
-
-  const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
     sanityClient
@@ -76,7 +73,6 @@ function App() {
 
           return null;
         });
-        setTestimonials(tempTestimonials);
         setProjects(tempProjects);
       })
       .catch(console.error);
@@ -91,10 +87,10 @@ function App() {
       <Nav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Home />
-      <Services services={services} />
+      <Services services={SERVICES} />
       <Experiences experiences={EXPERIENCES} />
       <Portfolio projects={projects} />
-      <Testimonials testimonials={testimonials} />
+      <Testimonials testimonials={TESTIMONIALS} />
       <Contact />
       <Footer />
     </div>

@@ -17,19 +17,21 @@ const Testimonial = ({ testimonial }) => {
             {testimonial.name}
             <span className="country">({testimonial.country})</span>
           </p>
-          <a
-            href={testimonial.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link"
-            title="verify"
-          >
-            <FontAwesomeIcon
-              icon={faExternalLinkAlt}
-              size="lg"
-              className="icon"
-            />
-          </a>
+          {!!testimonial.url && (
+            <a
+              href={testimonial.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link"
+              title="verify"
+            >
+              <FontAwesomeIcon
+                icon={faExternalLinkAlt}
+                size="lg"
+                className="icon"
+              />
+            </a>
+          )}
         </div>
       </div>
     </>
