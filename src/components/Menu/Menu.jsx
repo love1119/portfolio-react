@@ -14,6 +14,11 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
           onClick={() => setMenuOpen(false)}
         />
         <NavLink
+          text="Experiences"
+          path="experiences"
+          onClick={() => setMenuOpen(false)}
+        />
+        <NavLink
           text="Portfolio"
           path="portfolio"
           onClick={() => setMenuOpen(false)}
