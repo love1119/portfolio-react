@@ -4,7 +4,7 @@ import "./services-card.css";
 export const ServicesCard = ({ image, tags, title }) => {
   return (
     <div className="services-card">
-      <img src={image} alt={title} />
+      {image}
       <h2>{title}</h2>
       <div className="tags">
         {tags?.map((tag, index) => (

@@ -11,6 +11,8 @@ import Testimonials from "components/Testimonials/Testimonials";
 import  Footer  from "components/Footer/Footer";
 // Sanity
 import sanityClient from "client";
+// Data
+import { SERVICES } from "./data";
 
 // Animation
 import Aos from "aos";
@@ -20,7 +22,7 @@ import "aos/dist/aos.css";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [projects, setProjects] = useState([]);
-  const [services, setServices] = useState([]);
+  const [services] = useState(SERVICES);
 
   const [testimonials, setTestimonials] = useState([]);
 
@@ -76,7 +78,6 @@ function App() {
         });
         setTestimonials(tempTestimonials);
         setProjects(tempProjects);
-        setServices(tempServices);
       })
       .catch(console.error);
   }, []);
