@@ -4,7 +4,7 @@ import React, { useState, useRef } from "react";
 import "./contact.css";
 
 // Email Js
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 // image
 import shakeImage from "../../images/shake.svg";
@@ -14,7 +14,7 @@ import { Heading } from "../Heading/Heading";
 import Button from "components/Button/Button";
 
 const Contact = () => {
-  const INITIAL_VALUES = { email: "", message: "" };
+  const INITIAL_VALUES = { user_name: "", user_email: "", message: "" };
   const [notification, setNotification] = useState(false);
   const [values, setValues] = useState(INITIAL_VALUES);
   const [loading, setLoading] = useState(false);
@@ -25,12 +25,12 @@ const Contact = () => {
   const sendEmail = async () => {
     try {
       const result = await emailjs.sendForm(
-        `gmail`,
-        `emailjs`,
+        "service_pght2jb",
+        "template_v37psev",
         form.current,
-        `user_Ar1zI6cvC6aUG82I1aNsA`
+        "SktmA0ScYGlWhcLD4"
       );
-      console.log("result ", result.text);
+      console.log("success", result.text);
     } catch (error) {
       console.log("ERROR", error);
     }
@@ -69,11 +69,19 @@ const Contact = () => {
         <div className="right">
           <form onSubmit={handleSubmit} ref={form}>
             <input
-              type="email"
-              name="email"
-              value={values.email}
+              type="text"
+              name="user_name"
+              value={values.user_name}
               onChange={handleChange}
-              placeholder="Email"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              type="email"
+              name="user_email"
+              value={values.user_email}
+              onChange={handleChange}
+              placeholder="Your Email"
               required
             />
             <textarea
